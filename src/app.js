@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import DevTools from './utils/devtools';
+//import DevTools from './utils/devtools';
 
 export default class App extends Component {
 

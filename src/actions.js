@@ -1,4 +1,4 @@
-import { model } from './model';
+import model from './model';
 import each from 'lodash/each';
 import assign from 'lodash/assign';
 
@@ -30,21 +30,23 @@ each(model, (theme, key) => {
     if (key !== "theme") {
       each(theme, value => {
           value.rating = 0;
-          initialState[theme][value.id] = value;
+          initialState[key] = initialState[key] || {};
+          initialState[key][value.id] = value;
       });
     }
     else {
       each(theme, value => {
-          initialState[theme][value] = {
+          initialState[key] = initialState[key] || {};
+          initialState[key][value] = {
             id: value,
             name: value
           };
       });
     }
-    theme.summ = 0;
+    initialState[key].summ = 0;
 });
 
-export default function votes(state = initialState, action) {
+export function votes(state = initialState, action) {
     switch (action.type) {
 
         case MAKE_VOTE:

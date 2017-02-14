@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class voteList extends Component {
+
     render() {
+      console.log(this.props);
       return (
         <div className="panel panel-primary">
 
@@ -18,7 +20,7 @@ class voteList extends Component {
                             <i className="material-icons">grade</i>
                         </div>
                         <div className="row-content">
-                            <div className="badge">Voted {this.props.teacher['Smolnikov']} people</div>
+                            <div className="badge">Voted {this.props.teacher.summ} people</div>
                             <h4 className="list-group-item-heading">Best teacher</h4>
                             <p className="list-group-item-text">Vote for your favorite teacher course!</p>
                         </div>
@@ -31,7 +33,7 @@ class voteList extends Component {
                             <i className="material-icons">school</i>
                         </div>
                         <div className="row-content">
-                            <div className="badge">Voted 20 people</div>
+                            <div className="badge">Voted {this.props.theme.summ} people</div>
                             <h4 className="list-group-item-heading">Most difficult homework</h4>
                             <p className="list-group-item-text">What homework was the most difficult for you?</p>
                         </div>
@@ -44,7 +46,7 @@ class voteList extends Component {
                             <i className="material-icons">thumb_up</i>
                         </div>
                         <div className="row-content">
-                            <div className="badge">Voted 30 people</div>
+                            <div className="badge">Voted {this.props.homework.summ} people</div>
                             <h4 className="list-group-item-heading">Most interesting theme of the course</h4>
                             <p className="list-group-item-text">What is the theme of the course you are most interested in?</p>
                         </div>
@@ -66,6 +68,4 @@ class voteList extends Component {
     }
 }
 
-export default connect(state => {
-  teacher: state.teacher
-})(voteList);
+export default connect(state => state.votes)(voteList)

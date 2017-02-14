@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Router, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
-import { syncHistoryWithStore } from 'react-router-redux';
+//import { syncHistoryWithStore } from 'react-router-redux';
 import routes from './routes';
 import { createStore, combineReducers } from 'redux';
 import * as reducers from './actions';
@@ -16,9 +16,9 @@ const store = createStore(reducer);
 
 render(
   <Provider store={store}>
-    <Router history={browserHistory}>
-      { routes }
-    </Router>
+      <Router history={browserHistory}>
+        { routes }
+      </Router>
     </Provider>,
     document.getElementById('app')
 );

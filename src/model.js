@@ -2,49 +2,86 @@ export default {
       teacher: [
           {
             id: "Smolnikov",
-            name: "Сергей Смольников",
-            photo: "Sergei_Smolnikov.jpg"
+            name: "Sergei Smolnikov",
+            description: "Senior Software Engineer",
+            img: "Sergei_Smolnikov.jpg"
           },
           {
               id: "Minin",
-              name: "Владилен Минин",
-              photo: "Vladilen_Minin.jpg"
+              name: "Vladilen Minin",
+              description: "Software Engineer",
+              img: "Vladilen_Minin.jpg"
           },
           {
               id: "Sukhomlin",
-              name: "Кирилл Сухомлин",
-              photo: "Kirill_Sukhomlin.gif"
+              name: "Kirill Sukhomlin",
+              description: "Senior Software Engineer",
+              img: "Kirill_Sukhomlin.png"
           }
       ],
-      theme: ["html", "css", "js", "ajax", "jquery", "react", "flux", "redux"],
+      theme: ["html", "css", "javascript", "ajax", "jquery", "react", "redux"],
       homework: [
           {
               id: "makeup",
-              name: "Верстка страницы с заданием"
+              name: "Makeup",
+              description: "html"
           },
           {
               id: "resume",
-              name: "Резюме"
+              name: "Resume",
+              description: "html + css"
           },
           {
               id: "widget",
-              name: "Виджет"
+              name: "Widget",
+              description: "html + css"
           },
           {
               id: "list",
-              name: "Список сотрудников + часы"
+              name: "List + clock",
+              description: "js dom-vars"
           },
           {
               id: "game",
-              name: "Игра"
+              name: "Game",
+              description: "js events-classes"
           },
           {
               id: "plugin",
-              name: "Плагин"
+              name: "Plagin",
+              description: "jquery"
           },
           {
               id: "json",
-              name: "JSON"
+              name: "JSON & JSONP",
+              description: "js + ajax"
           }
+      ],
+      context: [
+        {
+          id: "teacher",
+          title: "Best teacher",
+          description: "Vote for your favorite teacher course!",
+          img: "grade"
+        },
+        {
+          id: "homework",
+          title: "Most difficult homework",
+          description: "What homework was the most difficult for you?",
+          img: "school"
+        },
+        {
+          id: "theme",
+          title: "Most interesting theme of the course",
+          description: "What theme of the course you are most interested in?",
+          img: "thumb_up"
+        },
+        {
+          id: "quotes",
+          title: "Quote of the day by Chuck Norris",
+          description: "Choose you like most",
+          img: "Chuck.jpg"
+        }
+
       ]
 };

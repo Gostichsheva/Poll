@@ -1,13 +1,47 @@
-.list-group .list-group-separator {
-  margin: 0;
-}
-
-.list-group .list-group-separator::before {
-  width: 100%;
+.list-group .list-group-item .row-action-primary,
+.list-group .list-group-item .row-picture {
+    vertical-align: top;
 }
 
 .list-group .list-group-item {
-    padding: 10px 16px;
+    padding: 16px;
+}
+
+.list-group .list-group-item .row-action-primary i,
+.list-group .list-group-item .row-picture i {
+    font-size: 30px;
+    background: #FF9800;
+}
+
+.badge {
+  background: #757575;
+}
+
+.btn.btn-raised.btn-primary {
+  background: #FF9800;
+}
+
+.btn.btn-raised:not(.btn-link):hover.btn-primary,
+.btn.btn-raised:not(.btn-link):active.btn-primary,
+.btn.btn-raised:not(.btn-link):focus.btn-primary {
+  background: #7B1FA2;
+}
+
+.progress .progress-bar.progress-bar-info {
+    background: #FF9800;
+}
+
+.list-group .list-group-item .row-action-primary img,
+.list-group .list-group-item .row-picture img {
+    border: 0;
+    background: none;
+}
+
+a.list-group-item:hover,
+button.list-group-item:hover,
+a.list-group-item:focus,
+button.list-group-item:focus {
+  background: #f3e5f5;
 }
 
 .form-group {
@@ -17,4 +51,19 @@
 .list-group-item .badge {
   position: absolute;
   right: 16px;
+}
+
+.list-group .list-group-item .row-content {
+     min-height: auto;
+}
+
+.panel.panel-primary>.panel-heading {
+    background-color: #7B1FA2;
+    color: #fff;
+}
+
+@media (min-width: 1200px) {
+  .container {
+      width: 970px;
+  }
 }

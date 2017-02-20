@@ -20,7 +20,7 @@ store.dispatch(reducers.fetchQuotes());
 render(
   <Provider store={store}>
       <Router history={browserHistory}>
-        { routes }
+          { routes }
       </Router>
     </Provider>,
     document.getElementById('app')

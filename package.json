@@ -7,6 +7,9 @@
     "type": "git",
     "url": "https://github.com/Gostichsheva/Poll"
   },
+  "scripts": {
+    "start": "react-scripts start"
+  },
   "author": "Gostichsheva",
   "license": "ISC",
   "dependencies": {

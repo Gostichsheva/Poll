@@ -24,7 +24,7 @@
 .btn.btn-raised:not(.btn-link):hover.btn-primary,
 .btn.btn-raised:not(.btn-link):active.btn-primary,
 .btn.btn-raised:not(.btn-link):focus.btn-primary {
-  background: #7B1FA2;
+  background: #512DA8;
 }
 
 .progress .progress-bar.progress-bar-info {
@@ -41,7 +41,7 @@ a.list-group-item:hover,
 button.list-group-item:hover,
 a.list-group-item:focus,
 button.list-group-item:focus {
-  background: #f3e5f5;
+  background: #EDE7F6;
 }
 
 .form-group {
@@ -58,8 +58,8 @@ button.list-group-item:focus {
 }
 
 .panel.panel-primary>.panel-heading {
-    background-color: #7B1FA2;
-    color: #fff;
+    background-color: #512DA8;
+    color: #FFF;
 }
 
 @media (min-width: 1200px) {

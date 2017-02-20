@@ -1,7 +1,7 @@
 import each from 'lodash/each';
 import merge from 'lodash/merge';
-import model from './model';
 import entities from 'html-entities';
+import model from './model';
 
 let initialState = {
   users: {},
@@ -31,9 +31,8 @@ function receiveQuotes(json) {
     type: RECEIVE_QUOTES,
     quotes: json.value.map(quote => {
       return {
-        id: quote.id,
-        name: entities.AllHtmlEntities.decode(quote.joke),
-        description: quote.categories.join(' ')
+          id: quote.id,
+          name: entities.AllHtmlEntities.decode(quote.joke)
       }
     })
   }
@@ -53,7 +52,7 @@ export function fetchQuotes() {
 function transformModel(initialState, model) {
 
   each(model, (theme, key) => {
-      if (key !== "theme") {
+      if (key !== 'theme') {
         each(theme, value => {
             value.rating = 0;
             initialState[key] = initialState[key] || {};
@@ -72,7 +71,6 @@ function transformModel(initialState, model) {
       }
       initialState.ratingSumm[key] = 0;
   });
-
   return initialState;
 }
 
@@ -80,24 +78,24 @@ export function votes(state = transformModel(initialState, model), action) {
     switch (action.type) {
 
         case MAKE_VOTE:
-            const newRating = state[action.theme][action.id].rating + 1;
-            const newSumm = state.ratingSumm[action.theme] + 1;
-            const result = merge(state, {
-              [action.theme]: {
-                [action.id]: {
-                  rating: newRating
-                }
-              },
-              ratingSumm: {
-                [action.theme]: newSumm
+          const newRating = state[action.theme][action.id].rating + 1;
+          const newSumm = state.ratingSumm[action.theme] + 1;
+          const result = merge(state, {
+            [action.theme]: {
+              [action.id]: {
+                rating: newRating
               }
-            });
-            return result;
+            },
+            ratingSumm: {
+              [action.theme]: newSumm
+            }
+          });
+          return result;
 
         case UPDATE_USER:
           let userName = localStorage.getItem('username');
           if (!userName) {
-              userName = localStorage.setItem('username', 'poll');
+            userName = localStorage.setItem('username', 'poll');
           }
           const newUser = (state.users[userName] && state.users[userName].slice()) || [];
           newUser.push(action.theme);
@@ -107,15 +105,14 @@ export function votes(state = transformModel(initialState, model), action) {
             }
           });
 
-          case RECEIVE_QUOTES:
-            const newState = merge(state, transformModel({
-              ratingSumm: {}
-            }, {
-              quotes: action.quotes
-            }));
-            return newState;
-
+        case RECEIVE_QUOTES:
+          const newState = merge(state, transformModel({
+            ratingSumm: {}
+          }, {
+            quotes: action.quotes
+          }));
+          return newState;
         default:
-            return state;
+          return state;
     }
 };
